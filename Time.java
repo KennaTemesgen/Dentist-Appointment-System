@@ -30,14 +30,15 @@ public class Time
 	 	}
 	 	
 	 }
-	 public void add(int minutes)
+	//the add function
+	 public void add(int minutes)//
 	 {
 	 	this.minutes += minutes;
 	 	if (this.minutes >= 60)
 	 		hours += this.minutes/60;//adds the extra minutes to our hours
 	 		this.minutes = this.minutes%60;//the remaining minutes 
 	 }
-
+	//creating the display function
 	public void display()
 	{
 		if (minutes < 10)
@@ -49,23 +50,26 @@ public class Time
 			System.out.println(hours+":"+minutes);
 		}
 	}
+	//creating the main function
 	public static void main(String[] args) 
 	{
-		Time[] time = new Time[4];
-
+		Time[] time = new Time[4];//creating array to display our values
+		//creating instances of class Time
 		Time time1 = new Time();
 		Time time2 = new Time(10);
 		Time time3 = new Time(12,30);
 		Time time4 = new Time(10,05);
-
+		//adding to our array time
 		time[0] = time1;
 		time[1] = time2;
 		time[2] = time3;
 		time[3] = time4;
-
+		
+		//checking if our Add function works
 		time[3].add(56);
 		time[0].add(121);
 
+		//displaying our values
 		time[0].display();
 		time[1].display();
 		time[2].display();

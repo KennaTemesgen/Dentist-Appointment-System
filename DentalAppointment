@@ -1,0 +1,15 @@
+public class DentalAppointment{
+
+  //Attributes 
+  Person person;
+  Time time;
+  Date date;
+
+  //default constructor
+  public DentalAppointment(){
+    this.person = new Person();
+    this.time = new Time();
+    this.date = new Date();
+  }
+
+}

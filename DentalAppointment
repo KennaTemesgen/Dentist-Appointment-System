@@ -40,7 +40,38 @@ public class DentalAppointment{
   }
 
   public static void main(String[] args){
-    
+    Scanner sc = new Scanner(System.in);
+    DentalAppointment[] tempName = new DentalAppointment[3];
+    for (int i = 0; i < 3; i++){
+      System.out.println("First name: ");
+      String firstname = sc.nextLine();
+      System.out.println("Last name: ");
+      String lastname = sc.nextLine();
+      System.out.println("Zipcode: ");
+      String zipcode = sc.nextLine();
+      System.out.println("Month: ");
+      int month = sc.nextLine();
+      System.out.println("Day: ");
+      int day = sc.nextLine();
+      System.out.println("Year: ");
+      int year = sc.nextLine();
+      System.out.println("Hour: ");
+      int hour = sc.nextLine();
+      System.out.println("Minutes: ");
+      int minutes = sc.nextLine();
+      System.out.println("Duration: ");
+      int duration = sc.nextLine();
+
+      Person patient = new Person(firstname, lastname, zipcode);
+      Date date = new Date(month, day, year);
+      Time time = new Time(hour, minutes);
+      Time duration = new Time(duration);
+  
+      DentalAppointment temp = (patient, time, date, duration);
+      tempName[i] = temp;
+    }
+    tempName[0].display();
+    tempName[1].display();
   }
 
 }

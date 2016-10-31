@@ -1,15 +1,46 @@
+import java.util.Scanner;
 public class DentalAppointment{
 
-  //Attributes 
+  //Attributes
   Person person;
   Time time;
   Date date;
+  int duration;
+  Time end;
 
   //default constructor
   public DentalAppointment(){
     this.person = new Person();
     this.time = new Time();
     this.date = new Date();
+    this.duration = 30;
+    this.end = time;
+    end.add(duration);
+  }
+
+
+  //nondefault constructor
+  public DentalAppointment(Person person, Time time, Date date, int duration){
+    if duration > 240{
+      duration = 240;
+    }
+    this.person = person;
+    this.time = time;
+    this.date = date;
+    this.duration = duration;
+    this.end = time;
+    end.add(duration);
+  }
+
+  public void Display(){
+    person.Display();
+    time.display();
+    date.display();
+    end.display();
+  }
+
+  public static void main(String[] args){
+    
   }
 
 }

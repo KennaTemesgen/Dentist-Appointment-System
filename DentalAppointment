@@ -19,7 +19,7 @@ public class DentalAppointment{
   }
 
 
-  //nondefault constructor
+  //non-default constructor
   public DentalAppointment(Person person, Time time, Date date, int duration){
     if duration > 240{
       duration = 240;
@@ -39,9 +39,14 @@ public class DentalAppointment{
     end.display();
   }
 
+  //main function
   public static void main(String[] args){
+
     Scanner sc = new Scanner(System.in);
+    //array list that each set of inputs is saved in 
     DentalAppointment[] tempName = new DentalAppointment[3];
+
+    //for loop
     for (int i = 0; i < 3; i++){
       System.out.println("First name: ");
       String firstname = sc.nextLine();
@@ -60,14 +65,14 @@ public class DentalAppointment{
       System.out.println("Minutes: ");
       int minutes = sc.nextLine();
       System.out.println("Duration: ");
-      int duration = sc.nextLine();
+      int duration = sc.nextInt();
 
       Person patient = new Person(firstname, lastname, zipcode);
       Date date = new Date(month, day, year);
       Time time = new Time(hour, minutes);
-      Time duration = new Time(duration);
-  
-      DentalAppointment temp = (patient, time, date, duration);
+
+
+      DentalAppointment temp = new DentalAppointment(patient, time, date, duration);
       tempName[i] = temp;
     }
     tempName[0].display();

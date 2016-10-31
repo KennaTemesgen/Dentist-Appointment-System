@@ -21,14 +21,14 @@ public class DentalAppointment{
 
   //non-default constructor
   public DentalAppointment(Person person, Time time, Date date, int duration){
-    if duration > 240{
+    if (duration > 240){
       duration = 240;
     }
     this.person = person;
     this.time = time;
     this.date = date;
     this.duration = duration;
-    this.end = time;
+    this.end = new Time(this.time.getHour(), this.time.getMinute());
     end.add(duration);
   }
 
@@ -43,7 +43,7 @@ public class DentalAppointment{
   public static void main(String[] args){
 
     Scanner sc = new Scanner(System.in);
-    //array list that each set of inputs is saved in 
+    //array list that each set of inputs is saved in
     DentalAppointment[] tempName = new DentalAppointment[3];
 
     //for loop
@@ -55,17 +55,18 @@ public class DentalAppointment{
       System.out.println("Zipcode: ");
       String zipcode = sc.nextLine();
       System.out.println("Month: ");
-      int month = sc.nextLine();
+      int month = sc.nextInt();
       System.out.println("Day: ");
-      int day = sc.nextLine();
+      int day = sc.nextInt();
       System.out.println("Year: ");
-      int year = sc.nextLine();
+      int year = sc.nextInt();
       System.out.println("Hour: ");
-      int hour = sc.nextLine();
+      int hour = sc.nextInt();
       System.out.println("Minutes: ");
-      int minutes = sc.nextLine();
+      int minutes = sc.nextInt();
       System.out.println("Duration: ");
       int duration = sc.nextInt();
+      sc.nextLine();
 
       Person patient = new Person(firstname, lastname, zipcode);
       Date date = new Date(month, day, year);
@@ -75,8 +76,9 @@ public class DentalAppointment{
       DentalAppointment temp = new DentalAppointment(patient, time, date, duration);
       tempName[i] = temp;
     }
-    tempName[0].display();
-    tempName[1].display();
+    tempName[0].Display();
+    tempName[1].Display();
+    tempName[2].Display();
   }
 
 }

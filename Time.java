@@ -50,6 +50,14 @@ public class Time
 			System.out.println(hours+":"+minutes);
 		}
 	}
+	
+	public int getMinute(){
+		return minutes;
+	}
+	public int getHour(){
+		return hours;
+	}
+	
 	//creating the main function
 	public static void main(String[] args) 
 	{
